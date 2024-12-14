@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Creation</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+
+        .form-container{
+            max-width: 590px;
+            margin: 5px auto;
+        }
+
+        .form-group{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .from-group label{
+            width: 30%;
+        }
+
+        .form-group input, .form-group textarea, .form-group select{
+        
+            width: 70%;
+        }
+
+        .phone-group {
+            display: inline-block;
+            
+            margin-right: 10px;
+            text-align: center;
+        }
+        
+        .phone-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        .phone-group input {
+            width: 110px;
+            padding: 5px;
+            text-align: center;
+        }
+
+        label[for="yourPhone"]{
+            display: inline-block;
+            width: 30%;
+        }
+
+        select{
+            text-align: center;
+        }
+
+        .center{
+            text-align: center;
+        }
+
+        .margin{
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Register - Create Account</h1>
+    <form action="#" method="post" class="form-container">
+        <!-- Your Name -->
+        <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" name="name" id="name" required>
+        </div>
+        
+        <br/>
+        
+        <!-- Email ID-->
+        <div class="form-group">
+            <label for="email">E-Mail ID</label>
+            <input type="email" name="email" id="email" required>
+        </div>
+        
+        <br/>
+        
+        <!-- Email ID-->
+        <div class="form-group">
+            <label for="aemail">Alternate E-Mail ID</label>
+            <input type="email" name="aemail" id="aemail" required>
+        </div>
+        
+        <br/>
+
+        <!-- Your Phone -->
+        <div class="">
+            <label for="yourPhone">Your Phone</label>
+            <div class="phone-group">
+                <label for="">Country Code</label>
+                <input type="text" name="country_code">
+            </div>
+            <div class="phone-group">
+                <label for="">City Code</label>
+                <input type="text" name="city_code">
+            </div>
+            <div class="phone-group">
+                <label for="">Phone Number</label>
+                <input type="text" name="phone_number">
+            </div>
+        </div>
+        
+        <br/>
+
+        <!-- Mobile Phone -->
+        <div class="form-group">
+            <label for="mobile_phone">Mobile Phone</label>
+            <input type="text" name="mobile_phone" id="mobile_phone">
+        </div>
+
+        <br/>
+
+        <!-- Your Postal Address -->
+        <div class="form-group">
+            <label for="postal_address">Your Postal Address</label>
+            <textarea name="postal_address" id="postal_address" required></textarea>
+        </div>
+
+        <br/>
+
+        <!-- Country -->
+        <div class="form-group">
+            <label for="country">Country</label>
+            <select name="country" id="country" required>
+                <option value="0" disabled selected>---Select One---</option>
+                <option value="us">USA</option>
+                <option value="jp">Japan</option>
+                <option value="fr">France</option>
+            </select>
+        </div>
+
+        <br/>
+
+        <!-- Password -->
+        <div class="form-group">
+            <label for="ps">password</label>
+            <input type="password" name="ps" id="ps" required>
+        </div>
+
+        <br/>
+
+        <!-- Re-enter Password -->
+        <div class="form-group">
+            <label for="re-ps">Re-Enter Password</label>
+            <input type="password" name="re-ps" id="re-ps" required>
+        </div>
+
+        <br/>
+
+        <!-- Terms of Use -->
+        <div class="center">
+            <input type="checkbox" name="terms" id="" required>
+            <strong>I accept the <a href="#" target="_blank">Terms of Use</a></strong>
+        </siv>
+
+        <br/>
+
+        <!-- Submit and Reset Buttons -->
+        <div class="actions center">
+            <input type="submit" value="Continue >>" class="margin">
+            <input type="reset" value="Reset">
+        </div>
+
+        
+    
+
+        
+    </form>
+</body>
+</html>
