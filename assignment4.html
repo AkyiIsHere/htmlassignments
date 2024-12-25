@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container:first-child{
+            font-weight: 600;
+        }
+        .upper-alpha{
+            list-style-type: upper-alpha;
+        }
+        .lower-alpha{
+            list-style-type: lower-alpha;
+        }
+        .lower-roman{
+            list-style-type: lower-roman;
+        }
+
+        .table-containter{
+            width: 800px;
+            margin: auto;
+        }
+
+        .table-containter > .div1{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            h2,h3{
+                margin: 5px;
+            }
+
+            table{
+
+                border: 2px solid #333;
+    
+                *{
+                    text-align: center;
+                }
+                th{
+                    background-color: burlywood;
+                }
+                td{
+                    color: #fff;
+                    background: mediumblue;
+                }         
+                .eng{
+                    background-color: crimson;
+                }   
+                .math{
+                    background-color: green;
+                }
+                .myan{
+                    background-color: purple;
+                }
+            }           
+        }
+
+        .description{
+            text-indent: 10%;
+            p{
+                margin: 0;
+            }
+           
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>Himalaya Mall</h3>
+        <ol class="upper-alpha">
+            <li>Ground Floor
+                <ol>
+                    <li>Bigbazzar
+                        <ol class="lower-alpha">
+                            <li>FoodBazar</li>
+                            <li>MobileBazar
+                                <ol>
+                                    <li>Instrument</li>
+                                    <li>Repairing</li>
+                                </ol>
+                            </li>
+                            <li>ClothsBazar</li>
+                            <li>FurnitureBazar</li>
+                        </ol>
+                    </li>
+                    <li>Dollar Shop</li>
+                </ol>
+            </li>
+            <li>First Floor
+                <ol>
+                    <li>Pantaloons</li>
+                    <li>TATA</li>
+                    <li>Siyaram
+                        <ol class="lower-roman">
+                            <li>Women's ware</li>
+                            <li>Men's ware</li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+            <li>Second Floor
+                <ol>
+                    <li>Snkalp</li>
+                    <li>Coconut</li>
+                    <li>Toxic
+                        <ol class="upper-alpha">
+                            <li>Dance floor</li>
+                            <li>Cyclone</li>
+                        </ol>
+                    </li>
+                    <li>Yash Cybercafe</li>
+                </ol>
+            </li>
+            <li>Third Floor
+                <ol>
+                    <li>Sankalp
+                        <ol>
+                            <li>Screen 1<sup>st</sup></li>
+                            <li>Screen 2<sup>nd</sup></li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+        </ol>
+    </div>
+
+    <hr/>
+
+    <div class="table-containter">
+        <div class="div1">
+            <h2>Computer University</h2>
+            <h3>Time Table for First Year Students</h3>
+            <table>
+                <tr>
+                    <th>Day</th>
+                    <th>8:00-8:45</th>
+                    <th>8:45-9:30</th>
+                    <th>9:30-10:15</th>
+                    <th>10:15-11:00</th>
+                    <th>11:00-11:45</th>
+                    <th>11:45-1:00</th>
+                    <th>1:00-1:45</th>
+                    <th>1:45-2:30</th>
+                </tr>
+                <tr>
+                    <td>Monday</td>
+                    <td colspan="2">101</td>
+                    <td colspan="2" class="eng">English</td>
+                    <td>lunch</td>
+                    <td colspan="2" class="math">Maths</td>
+                    <td class="myan">Myanmar</td>
+                </tr>
+                <tr>
+                    <td>Tuesday</td>
+                    <td rowspan="2">102</td>
+                    <td colspan="2" class="math">Maths</td>
+                    <td class="myan">Myanmar</td>
+                    <td>lunch</td>
+                    <td colspan="2">103</td>
+                    <td>104</td>
+                </tr>
+                <tr>
+                    <td>Wednesday</td>
+                    <td class="eng">English</td>
+                    <td colspan="2">101</td>
+                    <td>lunch</td>
+                    <td colspan="2">104</td>
+                    <td class="eng">English</td>
+                </tr>
+                <tr>
+                    <td>Thursday</td>
+                    <td rowspan="2" class="myan">Myanmar</td>
+                    <td colspan="2">103</td>
+                    <td>Lab</td>
+                    <td>lunch</td>
+                    <td colspan="2">102</td>
+                    <td class="eng">English</td>
+                </tr>
+                <tr>
+                    <td>Friday</td>
+                    <td>104</td>
+                    <td colspan="2">Lab</td>
+                    <td>lunch</td>
+                    <td colspan="2">101</td>
+                    <td>103</td>
+                </tr>
+            </table>
+        </div>
+        <div class="description">
+            <p>101 - Introduction to Computer System(Daw Myo Myo)</p>
+            <p>102 - Digital(Daw Nilar)</p>
+            <p>103 - Information System(U Naing Win)</p>
+            <p>104 - Computer Programming(U Mg Mg)</p>
+            <p>Myanmar(Daw Win Win)</p>
+            <p>English(Daw Soe Soe)</p>
+            <p>Maths(Daw Ei Mon)</p>
+        </div>     
+    </div>
+
+
+
+</body>
+</html>
