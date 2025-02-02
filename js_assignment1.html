@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Registration</title>
+    <style>
+        body{
+            font-family: 'Times New Roman', Times, serif;
+            display: grid;
+            place-items: center;
+        }
+        .container{
+            width: 60%;
+            min-width: 450px;
+            
+        }
+
+        fieldset{
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        fieldset * {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Payment Registration</h1>
+
+        <form action="" onsubmit="validateForm(event)">
+        
+            <fieldset>
+                <legend>Name</legend>
+
+                <!-- <div class="form-control"> -->
+                    <label for="title">Title</label>
+                    <select name="title" id="title">
+                        <option value="1">Mr.</option>
+                        <option value="2">Mrs.</option>
+                    </select>
+                <!-- </div> -->
+                <!-- <div class="form-control"> -->
+                    <label for="fname">First Name: </label>
+                    <input type="text" name="fname" id="fname" maxlength="9"  autofocus>
+                <!-- </div> -->
+                <!-- <div class="form-control"> -->
+                    <label for="lname">Last Name: </label>
+                    <input type="text" name="lname" id="lname" maxlength="7">
+                <!-- </div> -->
+            </fieldset>
+
+            <fieldset>
+                <legend>Address</legend>
+
+                <!-- <div class="form-control"> -->
+                    <label for="street">Street: </label>
+                    <input type="text" name="street" id="street">
+                <!-- </div> -->
+                <!-- <div class="form-control"> -->
+                    <label for="city">City: </label>
+                    <input type="text" name="city" id="city">
+                <!-- </div> -->
+                <!-- <div class="form-control"> -->
+                    <label for="city">State: </label>
+                    <input type="text" name="city" id="state">
+                    <br/>
+                <!-- </div> -->
+                <!-- <div class="form-control"> -->
+                    <label for="postcode">Post Code: </label>
+                    <input type="number" name="postcode" id="postcode">
+                <!-- </div> -->
+                <!-- <div class="form-control"> -->
+                    <label for="country">Country: </label>
+                    <input type="text" name="country" id="country">
+                <!-- </div> -->
+            </fieldset>
+
+            <fieldset>
+                <legend>Payment details</legend>
+
+                <fieldset>
+                    <legend>Credit Card</legend>
+                    
+                    <input type="radio" name="paymentType" value="Credit"> American Express
+                    <input type="radio" name="paymentType" value="Credit"> Mastercard
+                    <input type="radio" name="paymentType" value="Credit"> Visa
+                    <input type="radio" name="paymentType" value="Credit"> Blockbuster Card
+                </fieldset>
+
+                <!-- <div class="form-control"> -->
+                    <label for="cardnumber">Card Number: </label>
+                    <input type="number" name="cardnumber" id="cardnumber">
+                <!-- </div> -->
+                <!-- <div class="form-control"> -->
+                    <label for="expirydate">Expiry date: </label>
+                    <input type="date" name="expirydate" id="expirydate">
+                <!-- </div>  -->
+                <div class="btn-container">
+                    <button type="submit" class="btn">Sunmit My Details</button>
+                    <button type="reset" class="btn">Reset</button>
+                </div>
+            </fieldset>
+        </form>
+
+    </div>
+
+
+
+
+    <script>
+
+        function validateForm(event) {
+            console.log("start")
+            event.preventDefault(); // prevents from submission to handle validation manually
+
+            let fields = ["fname","lname","street","city","state","country","postcode","cardnumber","expirydate"];
+            let values = {};
+            let errors = [];
+
+            // Loop through the fields to get their values
+            fields.forEach(field => {
+                values[field] = document.getElementById(field).value.trim();
+            });
+
+            //Get the selected payment type
+            let paymentType = document.querySelector('input[name="paymentType"]:checked');
+
+            //Regex for input validation
+            let fnameRegex = /^[A-Za-z]{1,9}$/, //Allows only letters, max 9 characters
+                lnameRegex = /^[A-Za-z]{1,7}$/, //Allows only letters, max 7 characters
+                postcodeRegex = /^\d{5}$/, // Must be 5 number
+                cardnumber = /^\d+$/; // only numbers
+
+            //Validation checks for each input field
+            if(!fnameRegex.test(values.fname)){
+                //alert("First Name field cannot be blank and enters no more than 9 characters!");
+                //return;
+                errors.push("=> First Name field cannot be blank and enters no more than 9 characters!");
+            }
+            if(!lnameRegex.test(values.lname)){
+                //alert("Last Name cannot be blank and enters data which is no more than 7 characters!");
+                //return;
+                errors.push("=> Last Name cannot be blank and enters data which is no more than 7 characters!");
+            }
+            if (!values.street || !values.city || !values.state || !values.country) {
+                //alert("Street, City, State, and Country fields cannot be blank.");
+                //return;
+                errors.push("=> Street, City, State, and Country fields cannot be blank.");
+            }
+            if(!postcodeRegex.test(values.postcode)){
+                //alert("Post Code must be 5 numeric characters!");
+                //return;
+                errors.push("=> Post Code must be 5 numeric characters!");
+            }
+            if(!cardnumber.test(values.cardnumber)){
+                //alert("Card Number field cannot be blank and input data must be numbers!");
+                //return;
+                errors.push("=> Card Number field cannot be blank and input data must be numbers!");
+            }
+            if(!values.expirydate){
+                //alert("Expiry date cannot be blank.");
+                //return;
+                errors.push("=> Expiry date cannot be blank.");
+            }
+            if(!paymentType){
+                //alert("Please select a payment method!");
+                //return;
+                errors.push("=> Please select a payment method!");
+            }
+            console.log("end validataion");
+            if(errors.length > 0){
+                alert(errors.join("\n")); // show all errors in a single alert
+                return;
+            }
+
+            // all validatitons pass
+            event.target.submit();
+            alert("Thank You!");
+            event.target.reset();
+
+            console.log("no error");
+        } 
+
+        console.log("hello");
+       
+        
+    </script>
+</body>
+</html>
