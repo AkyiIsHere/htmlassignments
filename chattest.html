@@ -3,86 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Testing</title>
     <style>
-        .form-container {
-            max-width: 400px; /* Sets a fixed width for the form */
-            margin: 0 auto; /* Centers the form on the page */
-            font-family: Arial, sans-serif;
+        .container{
+            width: 600px;
+            background: darkgray;
         }
-        
-        .form-group {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
+        .max,.min{
+            height: 200px;
+            
+        }
+        .max{
+            width: 100%;
+            max-width: 900px;
+            background-color: crimson;
         }
 
-        
-        
-        label {
-            width: 30%;/* Adjusts the label column width */
-            font-weight: bold;
+        .min{
+            width: 50%;
+            min-width: 300px;
+            background-color: cornflowerblue;
         }
-        
-        input {
-            width: 65%; /* Adjusts the input column width */
-            padding: 8px;
-            font-size: 14px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        
-        .form-buttons {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
-        
-        button {
-            padding: 10px 15px;
-            font-size: 14px;
-            border: none;
-            border-radius: 4px;
-            background-color: #007BFF;
-            color: white;
-            cursor: pointer;
-        }
-        
-        button[type="reset"] {
-            background-color: #6c757d;
-        }
-        
-        button:hover {
-            opacity: 0.9;
-        }   
-        
+
     </style>
 </head>
 <body>
-    <form class="form-container">
-        <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" placeholder="Enter your name" required>
-        </div>
-        <div class="form-group">
-            <label for="address">Address:</label>
-            <input type="text" id="address" name="address" placeholder="Enter your address" required>
-        </div>
-        <div class="form-group">
-            <label for="phone">Phone:</label>
-            <input type="text" id="phone" name="phone" placeholder="Enter your phone number" required>
-        </div>
-        <div class="form-buttons">
-            <button type="submit">Submit</button>
-            <button type="reset">Reset</button>
-        </div>
-    </form>
-    
+    <div class="container">
+        <div class="max"></div>
+        <div class="min"></div>
+    </div>
 </body>
 </html>
-
-
-
-
-

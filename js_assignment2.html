@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="https://www.google.com" id="link" target="_blank">Google</a>
+
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus quis officia pariatur iste tempora consequuntur, numquam sunt atque possimus voluptatem fugiat quibusdam non, enim expedita veniam adipisci amet, sint sit!</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus quis officia pariatur iste tempora consequuntur, numquam sunt atque possimus voluptatem fugiat quibusdam non, enim expedita veniam adipisci amet, sint sit!</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus quis officia pariatur iste tempora consequuntur, numquam sunt atque possimus voluptatem fugiat quibusdam non, enim expedita veniam adipisci amet, sint sit!</p>
+
+    <div class="btn-container">
+        <button id="changeColor" class="btn" onclick="changeColor()">Change Color</button>
+        <button id="changeFont" class="btn" onclick="changeFont()">Change Font</button>
+        <button id="changeSize" class="btn" onclick="changeSize()">Change Size</button>
+        <button id="showTime" class="btn" onclick="showTime()">Show Time</button>
+        <button id="changeLink" class="btn" onclick="changeLink()">Change Link</button>
+    </div>
+
+    <div id="time"></div>
+
+    <script>
+        let pTag = document.querySelectorAll("p");
+        let timeDiv = document.querySelector("#time");
+        let linkTag = document.querySelector("#link");
+
+        function changeColor(){
+            pTag.forEach(item => item.style.color = "tomato");
+        }
+        
+        function changeFont(){
+            pTag.forEach(item => item.style.fontFamily = "Times New Roman");
+        }
+        
+        function changeSize(){
+            pTag.forEach(item => item.style.fontSize = "12px");
+        }
+        
+        function showTime(){
+            setInterval(function(){
+                var currentTime = new Date().toLocaleTimeString();
+                timeDiv.innerHTML = "Current Time: " + currentTime;
+            }, 1000);
+        }
+
+        function changeLink(){
+            if(linkTag.innerHTML == "Google"){
+                linkTag.innerHTML = "Yahoo";
+                linkTag.href = "https://www.yahoo.com";
+            }else{
+                linkTag.innerHTML = "Google";
+                linkTag.href = "https://www.google.com";
+            }
+        }
+
+    </script>
+</body>
+</html>
